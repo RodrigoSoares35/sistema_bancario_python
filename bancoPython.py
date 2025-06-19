@@ -1,11 +1,13 @@
 
 menu = """
 ********** Menu **********
+
 [1]------------- Depositar
 [2]----------------- Sacar
 [3]--------------- Extrato
 [4]----------------- Saldo
 [0]------------------ Sair
+
 **************************
 Escolha: """
 
@@ -25,7 +27,8 @@ while True:
         if valor > 0:
             saldo += valor
             extrato += f"Depósito: R$ {valor:.2f}\n"
-            print("")
+            print()
+            print("Deposito Realizado com Sucesso ✅")
 
         else:
             print("Valor inválido ❌")
