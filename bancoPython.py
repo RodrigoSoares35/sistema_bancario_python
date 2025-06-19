@@ -63,6 +63,8 @@ while True:
 
     elif opcao == "4":
          print("\n================ Saldo ================")
+         print
+
          print(f"Saldo da Conta R$:{saldo:.2f}")
         
     elif opcao == "0":
@@ -70,4 +72,4 @@ while True:
         break
     
     else:
-        print("Operação inválida, por favor selecione novamente a operação desejada.")
+        print("Por favor selecione novamente a operação desejada.")
