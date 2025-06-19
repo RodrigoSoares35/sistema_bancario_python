@@ -25,35 +25,35 @@ while True:
         if valor > 0:
             saldo += valor
             extrato += f"Depósito: R$ {valor:.2f}\n"
+            print("")
 
         else:
-            print("Operação falhou! O valor informado é inválido.")
+            print("Valor inválido ❌")
 
     elif opcao == "2":
         
-        valor = float(input("Informe o valor do saque: "))
+        valor = float(input("Informe o valor do saque R$: "))
 
-        while valor < saldo or valor < limite:
+        if valor > saldo:
+            print("Você não tem saldo suficiente!❌")
 
-            if valor > saldo:
-                print("Operação falhou! Você não tem saldo suficiente.")
+        elif valor > limite:
+            print(" O valor do saque excede o limite ❌")
 
-            elif valor > limite:
-                print("Operação falhou! O valor do saque excede o limite.")
+        elif numero_saques >= LIMITE_SAQUES:
+            print(" Número máximo de saques excedido ❌")
 
-            elif numero_saques >= LIMITE_SAQUES:
-                print("Operação falhou! Número máximo de saques excedido.")
+        elif valor > 0:
+            saldo -= valor
+            extrato += f"Saque: R$ {valor:.2f}\n"
+            numero_saques += 1
+            print("Saque Realizado com Sucesso ✅")
 
-            elif valor > 0:
-                    saldo -= valor
-                    extrato += f"Saque: R$ {valor:.2f}\n"
-                    numero_saques += 1
-
-            else:
-                    print("Operação falhou! O valor informado é inválido.")
+        else:
+            print("O valor informado é inválido ❌")
 
     elif opcao == "3":
-        print("\n================ EXTRATO ================")
+        print("\n================ 🧾EXTRATO  ================")
         print("Não foram realizadas movimentações." if not extrato else extrato)
         print(f"\nSaldo: R$ {saldo:.2f}")
         print("==========================================")
