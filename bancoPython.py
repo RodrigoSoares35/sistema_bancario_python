@@ -62,11 +62,12 @@ while True:
         print("==========================================")
 
     elif opcao == "4":
-         print("\n================ Saldo ================")
-         print
-
+         print("\n========= Saldo==========")
+         print()
          print(f"Saldo da Conta R$:{saldo:.2f}")
-        
+         print()
+         print("===========================")
+
     elif opcao == "0":
 
         break
